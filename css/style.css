@@ -1661,13 +1661,20 @@ input.error {
 
 .smooth-scroll {
   position: fixed;
-  right: 25px;
+  right: -100px;
   bottom: 25px;
   transform: rotate(90deg);
+  transition: right 0.2s ease-in;
+  cursor: pointer;
 }
 
 .hide {
   display: none;
+}
+
+.service-wrap {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 576px) {
