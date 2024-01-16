@@ -7,13 +7,16 @@ const calc = () => {
 
   const countCalc = () => {
     const calcTypeValue = +calcType.options[calcType.selectedIndex].value;
-    const calcTypeMaterialValue =
+    let calcTypeMaterialValue =
       +calcTypeMaterial.options[calcTypeMaterial.selectedIndex].value;
     const calcInputValue = calcInput.value;
 
     let totalValue = 0;
 
-    if (calcType.value && calcInput.value) {
+    if (calcTypeValue && calcInputValue) {
+      if (!calcTypeMaterialValue) {
+        calcTypeMaterialValue = 1;
+      }
       totalValue = Math.floor(
         calcTypeValue * calcTypeMaterialValue * calcInputValue
       );
@@ -24,14 +27,16 @@ const calc = () => {
     calcTotal.value = totalValue;
   };
 
-  calcBlock.addEventListener("input", (e) => {
-    if (
-      e.target === calcType ||
-      e.target === calcTypeMaterial ||
-      e.target === calcInput
-    ) {
-      countCalc();
-    }
-  });
+  if (calcBlock) {
+    calcBlock.addEventListener("input", (e) => {
+      if (
+        e.target === calcType ||
+        e.target === calcTypeMaterial ||
+        e.target === calcInput
+      ) {
+        countCalc();
+      }
+    });
+  }
 };
 export default calc;

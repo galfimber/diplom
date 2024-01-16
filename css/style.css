@@ -1677,6 +1677,27 @@ input.error {
   flex-wrap: wrap;
 }
 
+.sertificate-document-active {
+  display: block;
+  position: fixed;
+  inset: 0px;
+  z-index: 999;
+}
+
+.document-overlay-active {
+  opacity: 1;
+  z-index: 998;
+
+  transition: opacity 0.2s ease-in;
+}
+
+.img-responsive-active {
+  display: block;
+  position: absolute;
+  height: 90%;
+  z-index: 999; 
+}
+
 @media (min-width: 576px) {
   .benefits-wrap {
     width: 100%;
