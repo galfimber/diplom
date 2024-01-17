@@ -790,6 +790,10 @@ p.services-image_mobile {
   top: 0;
   left: 0;
   opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.document-overlay:hover{
+  opacity: 1;
 }
 .document-inner:hover .document-overlay {
   opacity: 1;
@@ -1686,16 +1690,23 @@ input.error {
 
 .document-overlay-active {
   opacity: 1;
-  z-index: 998;
-
-  transition: opacity 0.2s ease-in;
+  z-index: 998;  
 }
 
 .img-responsive-active {
   display: block;
   position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   height: 90%;
-  z-index: 999; 
+  z-index: 999;
+}
+
+.body-block {
+  overflow: hidden;
 }
 
 @media (min-width: 576px) {
