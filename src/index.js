@@ -9,7 +9,7 @@ import reg from "./modules/reg";
 
 popup();
 slider();
-timer("20 january 2024");
+timer("30 january 2024");
 scroll();
 calc();
 sertificate();
@@ -25,6 +25,42 @@ sendForm({
 });
 sendForm({
   formId: "form2",
+  someElem: [
+    {
+      type: "block",
+      id: "calc-total",
+    },
+  ],
+});
+sendForm({
+  formId: "form3",
+  someElem: [
+    {
+      type: "block",
+      id: "calc-total",
+    },
+  ],
+});
+sendForm({
+  formId: "form4",
+  someElem: [
+    {
+      type: "block",
+      id: "calc-total",
+    },
+  ],
+});
+sendForm({
+  formId: "form5",
+  someElem: [
+    {
+      type: "block",
+      id: "calc-total",
+    },
+  ],
+});
+sendForm({
+  formId: "form6",
   someElem: [
     {
       type: "block",

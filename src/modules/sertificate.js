@@ -13,13 +13,6 @@ const sertificate = () => {
       img.classList.toggle("img-responsive-active");
       overlay.classList.toggle("document-overlay-active");
     });
-
-    sertificate.addEventListener("mouseover", (e) =>
-      overlayHover(e.target, true)
-    );
-    sertificate.addEventListener("mouseout", (e) =>
-      overlayHover(e.target, false)
-    );
   });
 };
 export default sertificate;

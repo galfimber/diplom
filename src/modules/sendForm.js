@@ -5,7 +5,8 @@ const sendForm = ({ formId, someElem = [] }) => {
   const errorText = "Ошибка...";
   const successText = "Спасибо! Наш менеджер с вами свяжется";
   const errorName = "Не менее 2 символов в имени";
-  const errorTel = "Не менее 16 символов в номере телефона";
+  const errorTelMax = "Не более 16 символов в номере телефона";
+  const errorTelMin = "Не менее 11 символов в номере телефона";
 
   const sendData = (data) => {
     return fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -31,10 +32,14 @@ const sendForm = ({ formId, someElem = [] }) => {
           statusBlock.textContent = errorName;
           statusBlock.style.color = "red";
           throw new Error("Не менее 2 символов");
-        } else if (key === "phone" && val.length < 16) {
-          statusBlock.textContent = errorTel;
+        } else if (key === "phone" && val.length > 16) {
+          statusBlock.textContent = errorTelMax;
           statusBlock.style.color = "red";
-          throw new Error("Не менее 16 символов");
+          throw new Error("Не более 16 символов");
+        } else if (key === "phone" && val.length < 11) {
+          statusBlock.textContent = errorTelMin;
+          statusBlock.style.color = "red";
+          throw new Error("Не более 16 символов");
         }
         formBody[key] = val;
       });
